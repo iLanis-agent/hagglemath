@@ -1,0 +1,1070 @@
+{
+ "cases": [
+  {
+   "fn": "gap",
+   "args": [
+    "45.00",
+    "30.00",
+    "32.00",
+    "0.25"
+   ],
+   "expect": "The ask is $45.00 and the offer is $30.00, a gap of $15.00: the offer is 66.7% of the ask."
+  },
+  {
+   "fn": "floor",
+   "args": [
+    "45.00",
+    "30.00",
+    "32.00",
+    "0.25"
+   ],
+   "expect": "Your floor is $32.00: the offer of $30.00 sits $2.00 under it."
+  },
+  {
+   "fn": "middle",
+   "args": [
+    "45.00",
+    "30.00",
+    "32.00",
+    "0.25"
+   ],
+   "expect": "Split the difference once, rounded to the nearest $0.25: $37.50."
+  },
+  {
+   "fn": "ladder",
+   "args": [
+    "45.00",
+    "30.00",
+    "32.00",
+    "0.25"
+   ],
+   "expect": "Keep halving the gap toward the offer: after 1 split the price lands at $37.50, after 2 splits at $33.75, after 3 splits at $32.00."
+  },
+  {
+   "fn": "gap",
+   "args": [
+    "1.00",
+    "0.01",
+    "0.00",
+    "0.01"
+   ],
+   "expect": "The ask is $1.00 and the offer is $0.01, a gap of $0.99: the offer is 1.0% of the ask."
+  },
+  {
+   "fn": "floor",
+   "args": [
+    "1.00",
+    "0.01",
+    "0.00",
+    "0.01"
+   ],
+   "expect": "Your floor is $0.00: the offer of $0.01 sits $0.01 over it."
+  },
+  {
+   "fn": "middle",
+   "args": [
+    "1.00",
+    "0.01",
+    "0.00",
+    "0.01"
+   ],
+   "expect": "Split the difference once, rounded to the nearest $0.01: $0.51."
+  },
+  {
+   "fn": "ladder",
+   "args": [
+    "1.00",
+    "0.01",
+    "0.00",
+    "0.01"
+   ],
+   "expect": "Keep halving the gap toward the offer: after 1 split the price lands at $0.51, after 2 splits at $0.26, after 3 splits at $0.14."
+  },
+  {
+   "fn": "gap",
+   "args": [
+    "9.99",
+    "7.50",
+    "7.50",
+    "0.05"
+   ],
+   "expect": "The ask is $9.99 and the offer is $7.50, a gap of $2.49: the offer is 75.1% of the ask."
+  },
+  {
+   "fn": "floor",
+   "args": [
+    "9.99",
+    "7.50",
+    "7.50",
+    "0.05"
+   ],
+   "expect": "Your floor is $7.50 and the offer of $7.50 sits right on it."
+  },
+  {
+   "fn": "middle",
+   "args": [
+    "9.99",
+    "7.50",
+    "7.50",
+    "0.05"
+   ],
+   "expect": "Split the difference once, rounded to the nearest $0.05: $8.75."
+  },
+  {
+   "fn": "ladder",
+   "args": [
+    "9.99",
+    "7.50",
+    "7.50",
+    "0.05"
+   ],
+   "expect": "Keep halving the gap toward the offer: after 1 split the price lands at $8.75, after 2 splits at $8.15, after 3 splits at $7.85."
+  },
+  {
+   "fn": "gap",
+   "args": [
+    "25",
+    "25",
+    "20.00",
+    "0.10"
+   ],
+   "expect": "The offer of $25.00 matches the $25.00 ask exactly, leaving no gap to split."
+  },
+  {
+   "fn": "floor",
+   "args": [
+    "25",
+    "25",
+    "20.00",
+    "0.10"
+   ],
+   "expect": "Your floor is $20.00: the offer of $25.00 sits $5.00 over it."
+  },
+  {
+   "fn": "middle",
+   "args": [
+    "25",
+    "25",
+    "20.00",
+    "0.10"
+   ],
+   "expect": "There is no middle to find: the offer already meets the ask."
+  },
+  {
+   "fn": "ladder",
+   "args": [
+    "25",
+    "25",
+    "20.00",
+    "0.10"
+   ],
+   "expect": "There is no ladder to climb: the offer already meets the ask."
+  },
+  {
+   "fn": "gap",
+   "args": [
+    "100.00",
+    "80.00",
+    "80.00",
+    "0.25"
+   ],
+   "expect": "The ask is $100.00 and the offer is $80.00, a gap of $20.00: the offer is 80.0% of the ask."
+  },
+  {
+   "fn": "floor",
+   "args": [
+    "100.00",
+    "80.00",
+    "80.00",
+    "0.25"
+   ],
+   "expect": "Your floor is $80.00 and the offer of $80.00 sits right on it."
+  },
+  {
+   "fn": "middle",
+   "args": [
+    "100.00",
+    "80.00",
+    "80.00",
+    "0.25"
+   ],
+   "expect": "Split the difference once, rounded to the nearest $0.25: $90.00."
+  },
+  {
+   "fn": "ladder",
+   "args": [
+    "100.00",
+    "80.00",
+    "80.00",
+    "0.25"
+   ],
+   "expect": "Keep halving the gap toward the offer: after 1 split the price lands at $90.00, after 2 splits at $85.00, after 3 splits at $82.50."
+  },
+  {
+   "fn": "gap",
+   "args": [
+    "250.50",
+    "200.25",
+    "220.00",
+    "0.50"
+   ],
+   "expect": "The ask is $250.50 and the offer is $200.25, a gap of $50.25: the offer is 79.9% of the ask."
+  },
+  {
+   "fn": "floor",
+   "args": [
+    "250.50",
+    "200.25",
+    "220.00",
+    "0.50"
+   ],
+   "expect": "Your floor is $220.00: the offer of $200.25 sits $19.75 under it."
+  },
+  {
+   "fn": "middle",
+   "args": [
+    "250.50",
+    "200.25",
+    "220.00",
+    "0.50"
+   ],
+   "expect": "Split the difference once, rounded to the nearest $0.50: $225.50."
+  },
+  {
+   "fn": "ladder",
+   "args": [
+    "250.50",
+    "200.25",
+    "220.00",
+    "0.50"
+   ],
+   "expect": "Keep halving the gap toward the offer: after 1 split the price lands at $225.50, after 2 splits at $213.00, after 3 splits at $206.50."
+  },
+  {
+   "fn": "gap",
+   "args": [
+    "999.99",
+    "1.00",
+    "0.99",
+    "1.00"
+   ],
+   "expect": "The ask is $999.99 and the offer is $1.00, a gap of $998.99: the offer is 0.1% of the ask."
+  },
+  {
+   "fn": "floor",
+   "args": [
+    "999.99",
+    "1.00",
+    "0.99",
+    "1.00"
+   ],
+   "expect": "Your floor is $0.99: the offer of $1.00 sits $0.01 over it."
+  },
+  {
+   "fn": "middle",
+   "args": [
+    "999.99",
+    "1.00",
+    "0.99",
+    "1.00"
+   ],
+   "expect": "Split the difference once, rounded to the nearest $1.00: $500.00."
+  },
+  {
+   "fn": "ladder",
+   "args": [
+    "999.99",
+    "1.00",
+    "0.99",
+    "1.00"
+   ],
+   "expect": "Keep halving the gap toward the offer: after 1 split the price lands at $500.00, after 2 splits at $251.00, after 3 splits at $126.00."
+  },
+  {
+   "fn": "gap",
+   "args": [
+    "45.00",
+    "50.00",
+    "32.00",
+    "0.25"
+   ],
+   "expect": "The offer is $50.00 against a $45.00 ask, $5.00 over the ask at 111.1% of it."
+  },
+  {
+   "fn": "floor",
+   "args": [
+    "45.00",
+    "50.00",
+    "32.00",
+    "0.25"
+   ],
+   "expect": "Your floor is $32.00: the offer of $50.00 sits $18.00 over it."
+  },
+  {
+   "fn": "middle",
+   "args": [
+    "45.00",
+    "50.00",
+    "32.00",
+    "0.25"
+   ],
+   "expect": "Split the difference once, rounded to the nearest $0.25: $47.50."
+  },
+  {
+   "fn": "ladder",
+   "args": [
+    "45.00",
+    "50.00",
+    "32.00",
+    "0.25"
+   ],
+   "expect": "Keep halving the gap toward the offer: after 1 split the price lands at $47.50, after 2 splits at $48.75, after 3 splits at $49.50."
+  },
+  {
+   "fn": "gap",
+   "args": [
+    "12.50",
+    "12.50",
+    "10.00",
+    "0.05"
+   ],
+   "expect": "The offer of $12.50 matches the $12.50 ask exactly, leaving no gap to split."
+  },
+  {
+   "fn": "floor",
+   "args": [
+    "12.50",
+    "12.50",
+    "10.00",
+    "0.05"
+   ],
+   "expect": "Your floor is $10.00: the offer of $12.50 sits $2.50 over it."
+  },
+  {
+   "fn": "middle",
+   "args": [
+    "12.50",
+    "12.50",
+    "10.00",
+    "0.05"
+   ],
+   "expect": "There is no middle to find: the offer already meets the ask."
+  },
+  {
+   "fn": "ladder",
+   "args": [
+    "12.50",
+    "12.50",
+    "10.00",
+    "0.05"
+   ],
+   "expect": "There is no ladder to climb: the offer already meets the ask."
+  },
+  {
+   "fn": "gap",
+   "args": [
+    "99999.99",
+    "50000.00",
+    "60000.00",
+    "1.00"
+   ],
+   "expect": "The ask is $99999.99 and the offer is $50000.00, a gap of $49999.99: the offer is 50.0% of the ask."
+  },
+  {
+   "fn": "floor",
+   "args": [
+    "99999.99",
+    "50000.00",
+    "60000.00",
+    "1.00"
+   ],
+   "expect": "Your floor is $60000.00: the offer of $50000.00 sits $10000.00 under it."
+  },
+  {
+   "fn": "middle",
+   "args": [
+    "99999.99",
+    "50000.00",
+    "60000.00",
+    "1.00"
+   ],
+   "expect": "Split the difference once, rounded to the nearest $1.00: $75000.00."
+  },
+  {
+   "fn": "ladder",
+   "args": [
+    "99999.99",
+    "50000.00",
+    "60000.00",
+    "1.00"
+   ],
+   "expect": "Keep halving the gap toward the offer: after 1 split the price lands at $75000.00, after 2 splits at $62500.00, after 3 splits at $56250.00."
+  },
+  {
+   "fn": "gap",
+   "args": [
+    "3.30",
+    "3.30",
+    "3.00",
+    "0.01"
+   ],
+   "expect": "The offer of $3.30 matches the $3.30 ask exactly, leaving no gap to split."
+  },
+  {
+   "fn": "floor",
+   "args": [
+    "3.30",
+    "3.30",
+    "3.00",
+    "0.01"
+   ],
+   "expect": "Your floor is $3.00: the offer of $3.30 sits $0.30 over it."
+  },
+  {
+   "fn": "middle",
+   "args": [
+    "3.30",
+    "3.30",
+    "3.00",
+    "0.01"
+   ],
+   "expect": "There is no middle to find: the offer already meets the ask."
+  },
+  {
+   "fn": "ladder",
+   "args": [
+    "3.30",
+    "3.30",
+    "3.00",
+    "0.01"
+   ],
+   "expect": "There is no ladder to climb: the offer already meets the ask."
+  },
+  {
+   "fn": "gap",
+   "args": [
+    "45.00",
+    "50.00",
+    "32.00",
+    "0.25"
+   ],
+   "expect": "The offer is $50.00 against a $45.00 ask, $5.00 over the ask at 111.1% of it."
+  },
+  {
+   "fn": "floor",
+   "args": [
+    "45.00",
+    "50.00",
+    "32.00",
+    "0.25"
+   ],
+   "expect": "Your floor is $32.00: the offer of $50.00 sits $18.00 over it."
+  },
+  {
+   "fn": "middle",
+   "args": [
+    "45.00",
+    "50.00",
+    "32.00",
+    "0.25"
+   ],
+   "expect": "Split the difference once, rounded to the nearest $0.25: $47.50."
+  },
+  {
+   "fn": "ladder",
+   "args": [
+    "45.00",
+    "50.00",
+    "32.00",
+    "0.25"
+   ],
+   "expect": "Keep halving the gap toward the offer: after 1 split the price lands at $47.50, after 2 splits at $48.75, after 3 splits at $49.50."
+  },
+  {
+   "fn": "gap",
+   "args": [
+    "45.00",
+    "45.00",
+    "45.00",
+    "0.25"
+   ],
+   "expect": "The offer of $45.00 matches the $45.00 ask exactly, leaving no gap to split."
+  },
+  {
+   "fn": "floor",
+   "args": [
+    "45.00",
+    "45.00",
+    "45.00",
+    "0.25"
+   ],
+   "expect": "Your floor is $45.00 and the offer of $45.00 sits right on it."
+  },
+  {
+   "fn": "middle",
+   "args": [
+    "45.00",
+    "45.00",
+    "45.00",
+    "0.25"
+   ],
+   "expect": "There is no middle to find: the offer already meets the ask."
+  },
+  {
+   "fn": "ladder",
+   "args": [
+    "45.00",
+    "45.00",
+    "45.00",
+    "0.25"
+   ],
+   "expect": "There is no ladder to climb: the offer already meets the ask."
+  },
+  {
+   "fn": "gap",
+   "args": [
+    "10.00",
+    "9.90",
+    "9.50",
+    "0.25"
+   ],
+   "expect": "The ask is $10.00 and the offer is $9.90, a gap of $0.10: the offer is 99.0% of the ask."
+  },
+  {
+   "fn": "floor",
+   "args": [
+    "10.00",
+    "9.90",
+    "9.50",
+    "0.25"
+   ],
+   "expect": "Your floor is $9.50: the offer of $9.90 sits $0.40 over it."
+  },
+  {
+   "fn": "middle",
+   "args": [
+    "10.00",
+    "9.90",
+    "9.50",
+    "0.25"
+   ],
+   "expect": "Splitting the difference between $10.00 and $9.90 cannot move past $10.00: the $0.25 step is too coarse for a $0.10 gap."
+  },
+  {
+   "fn": "ladder",
+   "args": [
+    "10.00",
+    "9.90",
+    "9.50",
+    "0.25"
+   ],
+   "expect": "The $0.25 step swallows the $0.10 gap in one move, to $10.00: there is no halving ladder."
+  },
+  {
+   "fn": "gap",
+   "args": [
+    "10.00",
+    "9.70",
+    "9.50",
+    "0.25"
+   ],
+   "expect": "The ask is $10.00 and the offer is $9.70, a gap of $0.30: the offer is 97.0% of the ask."
+  },
+  {
+   "fn": "floor",
+   "args": [
+    "10.00",
+    "9.70",
+    "9.50",
+    "0.25"
+   ],
+   "expect": "Your floor is $9.50: the offer of $9.70 sits $0.20 over it."
+  },
+  {
+   "fn": "middle",
+   "args": [
+    "10.00",
+    "9.70",
+    "9.50",
+    "0.25"
+   ],
+   "expect": "Split the difference once, rounded to the nearest $0.25: $9.75."
+  },
+  {
+   "fn": "ladder",
+   "args": [
+    "10.00",
+    "9.70",
+    "9.50",
+    "0.25"
+   ],
+   "expect": "Keep halving the gap toward the offer: after 1 split the price lands at $9.75, after 2 splits at $9.75, after 3 splits at $9.75."
+  },
+  {
+   "fn": "gap",
+   "args": [
+    "0.01",
+    "0.00",
+    "0.00",
+    "0.01"
+   ],
+   "expect": "The ask is $0.01 and the offer is $0.00, a gap of $0.01: the offer is 0.0% of the ask."
+  },
+  {
+   "fn": "floor",
+   "args": [
+    "0.01",
+    "0.00",
+    "0.00",
+    "0.01"
+   ],
+   "expect": "Your floor is $0.00 and the offer of $0.00 sits right on it."
+  },
+  {
+   "fn": "middle",
+   "args": [
+    "0.01",
+    "0.00",
+    "0.00",
+    "0.01"
+   ],
+   "expect": "Splitting the difference between $0.01 and $0.00 cannot move past $0.01: the $0.01 step is too coarse for a $0.01 gap."
+  },
+  {
+   "fn": "ladder",
+   "args": [
+    "0.01",
+    "0.00",
+    "0.00",
+    "0.01"
+   ],
+   "expect": "The $0.01 step swallows the $0.01 gap in one move, to $0.01: there is no halving ladder."
+  },
+  {
+   "fn": "gap",
+   "args": [
+    "60.00",
+    "40.00",
+    "50.00",
+    "1.00"
+   ],
+   "expect": "The ask is $60.00 and the offer is $40.00, a gap of $20.00: the offer is 66.7% of the ask."
+  },
+  {
+   "fn": "floor",
+   "args": [
+    "60.00",
+    "40.00",
+    "50.00",
+    "1.00"
+   ],
+   "expect": "Your floor is $50.00: the offer of $40.00 sits $10.00 under it."
+  },
+  {
+   "fn": "middle",
+   "args": [
+    "60.00",
+    "40.00",
+    "50.00",
+    "1.00"
+   ],
+   "expect": "Split the difference once, rounded to the nearest $1.00: $50.00."
+  },
+  {
+   "fn": "ladder",
+   "args": [
+    "60.00",
+    "40.00",
+    "50.00",
+    "1.00"
+   ],
+   "expect": "Keep halving the gap toward the offer: after 1 split the price lands at $50.00, after 2 splits at $45.00, after 3 splits at $43.00."
+  },
+  {
+   "fn": "gap",
+   "args": [
+    "60.00",
+    "50.00",
+    "50.00",
+    "0.50"
+   ],
+   "expect": "The ask is $60.00 and the offer is $50.00, a gap of $10.00: the offer is 83.3% of the ask."
+  },
+  {
+   "fn": "floor",
+   "args": [
+    "60.00",
+    "50.00",
+    "50.00",
+    "0.50"
+   ],
+   "expect": "Your floor is $50.00 and the offer of $50.00 sits right on it."
+  },
+  {
+   "fn": "middle",
+   "args": [
+    "60.00",
+    "50.00",
+    "50.00",
+    "0.50"
+   ],
+   "expect": "Split the difference once, rounded to the nearest $0.50: $55.00."
+  },
+  {
+   "fn": "ladder",
+   "args": [
+    "60.00",
+    "50.00",
+    "50.00",
+    "0.50"
+   ],
+   "expect": "Keep halving the gap toward the offer: after 1 split the price lands at $55.00, after 2 splits at $52.50, after 3 splits at $51.50."
+  },
+  {
+   "fn": "gap",
+   "args": [
+    "19.99",
+    "15.01",
+    "16.00",
+    "0.05"
+   ],
+   "expect": "The ask is $19.99 and the offer is $15.01, a gap of $4.98: the offer is 75.1% of the ask."
+  },
+  {
+   "fn": "floor",
+   "args": [
+    "19.99",
+    "15.01",
+    "16.00",
+    "0.05"
+   ],
+   "expect": "Your floor is $16.00: the offer of $15.01 sits $0.99 under it."
+  },
+  {
+   "fn": "middle",
+   "args": [
+    "19.99",
+    "15.01",
+    "16.00",
+    "0.05"
+   ],
+   "expect": "Split the difference once, rounded to the nearest $0.05: $17.50."
+  },
+  {
+   "fn": "ladder",
+   "args": [
+    "19.99",
+    "15.01",
+    "16.00",
+    "0.05"
+   ],
+   "expect": "Keep halving the gap toward the offer: after 1 split the price lands at $17.50, after 2 splits at $16.25, after 3 splits at $15.65."
+  },
+  {
+   "fn": "gap",
+   "args": [
+    "200.00",
+    "150.00",
+    "150.00",
+    "0.10"
+   ],
+   "expect": "The ask is $200.00 and the offer is $150.00, a gap of $50.00: the offer is 75.0% of the ask."
+  },
+  {
+   "fn": "floor",
+   "args": [
+    "200.00",
+    "150.00",
+    "150.00",
+    "0.10"
+   ],
+   "expect": "Your floor is $150.00 and the offer of $150.00 sits right on it."
+  },
+  {
+   "fn": "middle",
+   "args": [
+    "200.00",
+    "150.00",
+    "150.00",
+    "0.10"
+   ],
+   "expect": "Split the difference once, rounded to the nearest $0.10: $175.00."
+  },
+  {
+   "fn": "ladder",
+   "args": [
+    "200.00",
+    "150.00",
+    "150.00",
+    "0.10"
+   ],
+   "expect": "Keep halving the gap toward the offer: after 1 split the price lands at $175.00, after 2 splits at $162.50, after 3 splits at $156.30."
+  },
+  {
+   "fn": "gap",
+   "args": [
+    "8.00",
+    "2.00",
+    "3.00",
+    "1.00"
+   ],
+   "expect": "The ask is $8.00 and the offer is $2.00, a gap of $6.00: the offer is 25.0% of the ask."
+  },
+  {
+   "fn": "floor",
+   "args": [
+    "8.00",
+    "2.00",
+    "3.00",
+    "1.00"
+   ],
+   "expect": "Your floor is $3.00: the offer of $2.00 sits $1.00 under it."
+  },
+  {
+   "fn": "middle",
+   "args": [
+    "8.00",
+    "2.00",
+    "3.00",
+    "1.00"
+   ],
+   "expect": "Split the difference once, rounded to the nearest $1.00: $5.00."
+  },
+  {
+   "fn": "ladder",
+   "args": [
+    "8.00",
+    "2.00",
+    "3.00",
+    "1.00"
+   ],
+   "expect": "Keep halving the gap toward the offer: after 1 split the price lands at $5.00, after 2 splits at $4.00, after 3 splits at $3.00."
+  },
+  {
+   "fn": "gap",
+   "args": [
+    "45.00",
+    "44.75",
+    "40.00",
+    "0.25"
+   ],
+   "expect": "The ask is $45.00 and the offer is $44.75, a gap of $0.25: the offer is 99.4% of the ask."
+  },
+  {
+   "fn": "floor",
+   "args": [
+    "45.00",
+    "44.75",
+    "40.00",
+    "0.25"
+   ],
+   "expect": "Your floor is $40.00: the offer of $44.75 sits $4.75 over it."
+  },
+  {
+   "fn": "middle",
+   "args": [
+    "45.00",
+    "44.75",
+    "40.00",
+    "0.25"
+   ],
+   "expect": "Splitting the difference between $45.00 and $44.75 cannot move past $45.00: the $0.25 step is too coarse for a $0.25 gap."
+  },
+  {
+   "fn": "ladder",
+   "args": [
+    "45.00",
+    "44.75",
+    "40.00",
+    "0.25"
+   ],
+   "expect": "The $0.25 step swallows the $0.25 gap in one move, to $45.00: there is no halving ladder."
+  },
+  {
+   "fn": "gap",
+   "args": [
+    "45.00",
+    "0.00",
+    "0.00",
+    "0.01"
+   ],
+   "expect": "The ask is $45.00 and the offer is $0.00, a gap of $45.00: the offer is 0.0% of the ask."
+  },
+  {
+   "fn": "floor",
+   "args": [
+    "45.00",
+    "0.00",
+    "0.00",
+    "0.01"
+   ],
+   "expect": "Your floor is $0.00 and the offer of $0.00 sits right on it."
+  },
+  {
+   "fn": "middle",
+   "args": [
+    "45.00",
+    "0.00",
+    "0.00",
+    "0.01"
+   ],
+   "expect": "Split the difference once, rounded to the nearest $0.01: $22.50."
+  },
+  {
+   "fn": "ladder",
+   "args": [
+    "45.00",
+    "0.00",
+    "0.00",
+    "0.01"
+   ],
+   "expect": "Keep halving the gap toward the offer: after 1 split the price lands at $22.50, after 2 splits at $11.25, after 3 splits at $5.63."
+  }
+ ],
+ "errors": [
+  [
+   "gap",
+   [
+    "0",
+    "30.00",
+    "32.00",
+    "0.25"
+   ]
+  ],
+  [
+   "gap",
+   [
+    "abc",
+    "30.00",
+    "32.00",
+    "0.25"
+   ]
+  ],
+  [
+   "gap",
+   [
+    "45.001",
+    "30.00",
+    "32.00",
+    "0.25"
+   ]
+  ],
+  [
+   "gap",
+   [
+    "100000",
+    "30.00",
+    "32.00",
+    "0.25"
+   ]
+  ],
+  [
+   "floor",
+   [
+    "45.00",
+    "-5",
+    "32.00",
+    "0.25"
+   ]
+  ],
+  [
+   "floor",
+   [
+    "45.00",
+    "30.0.0",
+    "32.00",
+    "0.25"
+   ]
+  ],
+  [
+   "floor",
+   [
+    "45.00",
+    "",
+    "32.00",
+    "0.25"
+   ]
+  ],
+  [
+   "floor",
+   [
+    "45.00",
+    "30.00",
+    "x",
+    "0.25"
+   ]
+  ],
+  [
+   "middle",
+   [
+    "45.00",
+    "30.00",
+    "32.005",
+    "0.25"
+   ]
+  ],
+  [
+   "middle",
+   [
+    "45.00",
+    "30.00",
+    "32.00",
+    "0.30"
+   ]
+  ],
+  [
+   "middle",
+   [
+    "45.00",
+    "30.00",
+    "32.00",
+    ""
+   ]
+  ],
+  [
+   "middle",
+   [
+    "45.00",
+    "30.00",
+    "32.00",
+    "1"
+   ]
+  ],
+  [
+   "ladder",
+   [
+    "45,00",
+    "30.00",
+    "32.00",
+    "0.25"
+   ]
+  ],
+  [
+   "ladder",
+   [
+    "45.00",
+    "30.00",
+    "32.00",
+    ".25"
+   ]
+  ],
+  [
+   "gap",
+   [
+    "45.00",
+    "30.00",
+    "32.00",
+    "0.25x"
+   ]
+  ],
+  [
+   "floor",
+   [
+    "  ",
+    "30.00",
+    "32.00",
+    "0.25"
+   ]
+  ]
+ ]
+}
