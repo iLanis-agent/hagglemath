@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haggle Math - app</title>
+<style>
+  :root { --accent:#0f6b5c; --ink:#122b27; --paper:#eef7f4; --soft:#d9ede7; }
+  * { box-sizing:border-box; margin:0; }
+  body { font-family:Georgia, "Times New Roman", serif; background:var(--paper); color:var(--ink); line-height:1.55; }
+  main { max-width:660px; margin:0 auto; }
+  .boundary { background:#fdeaea; border-left:6px solid #b03030; color:#5c1c1c; border-radius:6px; padding:1rem 1.1rem; }
+  .boundary strong { display:block; margin-bottom:.3rem; }
+  body { padding:2rem 1.2rem; }
+  h1 { font-size:1.8rem; color:var(--accent); }
+  .boundary { margin:1rem 0 1.4rem; }
+  .panel { background:var(--soft); border-left:5px solid var(--accent); border-radius:6px; padding:1rem 1.1rem; margin-bottom:1.1rem; }
+  h2 { font-size:1.1rem; margin-bottom:.6rem; }
+  p.note { font-size:.9rem; margin-bottom:.4rem; }
+  label { display:block; font-size:.9rem; margin:.45rem 0 .1rem; }
+  input { width:100%; padding:.45rem .55rem; font-size:1rem; border:1px solid #9fc8bd; border-radius:6px; background:#fff; color:var(--ink); font-family:inherit; }
+  .row2 { display:grid; grid-template-columns:1fr 1fr; gap:.6rem; }
+  .out { margin-top:.7rem; font-size:.98rem; background:#fff; border:1px dashed #9fc8bd; border-radius:6px; padding:.6rem .7rem; min-height:2.4rem; overflow-wrap:anywhere; }
+  .out.err { border-color:#b03030; color:#8a1f1f; }
+  footer { margin-top:1.8rem; font-size:.85rem; color:#6fa393; }
+  a { color:var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Haggle Math</h1>
+  <div class="boundary">
+    <strong>Boundary: arithmetic only</strong>
+    This page runs haggle arithmetic over your own prices: the gap between the ask and the offer, where the offer sits against your floor, the split-the-difference counter rounded to your step, and the halving ladder toward the offer. It does not know what the item is, what it is worth, or whether any price is fair, and it gives no verdict that you should take or refuse a deal. Every number here is your own entry.
+  </div>
+
+  <div class="panel">
+    <h2>The prices</h2>
+    <p class="note">The asking price and the offer on the table, as dollar amounts like 45 or 45.00.</p>
+    <div class="row2">
+      <div><label for="ask">Asking price</label><input id="ask" type="text" value="45.00"></div>
+      <div><label for="offer">Their offer</label><input id="offer" type="text" value="30.00"></div>
+    </div>
+  </div>
+  <div class="panel">
+    <h2>The guardrails</h2>
+    <p class="note">Your walk-away floor, and the step the counter rounds to: one of 0.01, 0.05, 0.10, 0.25, 0.50 or 1.00.</p>
+    <div class="row2">
+      <div><label for="floor">Your floor</label><input id="floor" type="text" value="32.00"></div>
+      <div><label for="step">Rounding step</label><input id="step" type="text" value="0.25"></div>
+    </div>
+  </div>
+  <div class="panel">
+    <h2>The gap truth</h2>
+    <p class="note">Gap: the distance between the ask and the offer, in dollars and as a share of the ask.</p>
+    <div class="out" id="g-out"></div>
+  </div>
+  <div class="panel">
+    <h2>The floor truth</h2>
+    <p class="note">Floor: where the offer sits against your own walk-away line.</p>
+    <div class="out" id="f-out"></div>
+  </div>
+  <div class="panel">
+    <h2>The middle truth</h2>
+    <p class="note">Middle: one split of the difference, rounded to your step.</p>
+    <div class="out" id="m-out"></div>
+  </div>
+  <div class="panel">
+    <h2>The ladder truth</h2>
+    <p class="note">Ladder: where the price lands if you keep halving the remaining gap.</p>
+    <div class="out" id="l-out"></div>
+  </div>
+
+  <footer>Haggle Math is exact arithmetic over the numbers you enter. <a href="index.html">Why it exists</a>.</footer>
+</main>
+<script src="engine.js"></script>
+<script>
+  function show(id, fn) {
+    const out = document.getElementById(id);
+    try { out.textContent = fn(); out.classList.remove("err"); }
+    catch (e) { out.textContent = e.message; out.classList.add("err"); }
+  }
+  function val(id) { return document.getElementById(id).value; }
+  function recalc() {
+    show("g-out", () => gapTruth(val("ask"), val("offer"), val("floor"), val("step")));
+    show("f-out", () => floorTruth(val("ask"), val("offer"), val("floor"), val("step")));
+    show("m-out", () => middleTruth(val("ask"), val("offer"), val("floor"), val("step")));
+    show("l-out", () => ladderTruth(val("ask"), val("offer"), val("floor"), val("step")));
+  }
+  document.querySelectorAll("input").forEach((el) => {
+    el.addEventListener("input", recalc);
+    el.addEventListener("change", recalc);
+  });
+  recalc();
+</script>
+</body>
+</html>
